@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            background-color: lightgray;
+            padding: 20px;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav h2 {
+            font-size: 1.5em;
+            color: black;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 10px 0;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            background-color: azure;
+            color: black;
+        }
+
+        main {
+            margin-left: 220px;
+            padding-top: 20px;
+            text-align: center;
+            width: 80%;
+        }
+
+        h1, h2 {
+            color: black;
+        }
+
+        #memeImage{
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: black;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Web Application</h1>
+    </header>
+
+    <p>
+        <img id="memeImage" src="Meme.jpg">
+    </p>
+
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+        <a href="./game.html">Game</a><br>
+        <a href="./palindrome.html">Palindrome</a><br>
+        <a href="./table.html">Table</a><br>
+        <a href="./user_input.html">User Input</a><br>
+    </nav>
+    <footer>
+        Francisco J Hernandez Sanchez<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283<br>
+    </footer>
+</body>
+</html>

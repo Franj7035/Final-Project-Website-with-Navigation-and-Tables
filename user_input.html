@@ -1,0 +1,152 @@
+<!-- Francisco Jair Hernandez Sanchez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Information Form</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 50px;
+            display: flex; /* Flexbox to align content horizontally */
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        nav {
+            background-color: lightgray;
+            padding: 20px;
+            width: 200px;
+            position: fixed; /* Fix the navigation to the left */
+            top: 0;
+            left: 0;
+            height: 100%; /* Full-height navigation */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+
+        nav h2 {
+            font-size: 1.5em;
+            color: black;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 10px 0;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            background-color: azure;
+            color: black;
+        }
+
+        main {
+            margin-left: 220px; /* Leave space for navigation */
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+
+        button:hover {
+            background-color: azure;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            color: black;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+        <a href="./game.html">Game</a><br>
+        <a href="./palindrome.html">Palindrome</a><br>
+        <a href="./table.html">Table</a><br>
+        <a href="./user_input.html">User Input</a><br>
+    </nav>
+
+    <main>
+        <h1>User Information Form</h1>
+        <p>Please enter your details below:</p>
+        
+        <form id="userForm">
+            <input type="text" id="firstName" placeholder="First Name" required><br>
+            <input type="text" id="lastName" placeholder="Last Name" required><br>       
+            <input type="text" id="zipCode" placeholder="Zip Code (5 digits)" required><br>
+            <button type="button" onclick="validateForm()">Submit</button>
+            <p id="message"></p>
+        </form>
+
+        <p id="secretMessage" style="display:none;" class="success">You have successfully entered valid information!</p>
+    </main>
+
+    <footer>
+        Francisco J Hernandez Sanchez<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283<br>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const zipCode = document.getElementById('zipCode').value;
+            const fullName = firstName + " " + lastName;
+            const message = document.getElementById('message');
+            message.innerHTML = '';  
+
+            if (fullName.length > 20) {
+                message.innerHTML = 'Full name cannot exceed 20 characters.';
+                message.className = 'error';
+                return; 
+            }
+
+            const zipCodePattern = /^\d{5}$/;  
+            if (!zipCodePattern.test(zipCode)) {
+                message.innerHTML = 'Please enter a valid 5-digit zip code.';
+                message.className = 'error';
+                return;  
+            }
+            document.getElementById('secretMessage').style.display = 'block';
+            message.innerHTML = 'Form submitted successfully!';
+            message.className = 'success';
+        }
+    </script>
+</body>
+</html>
